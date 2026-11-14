@@ -8,10 +8,10 @@
 <meta property="og:title" content="cockpit — le film" />
 <meta property="og:description" content="51 secondes pour comprendre : chaque agent de code, à côté de son ticket, sa PR, son CI." />
 <meta property="og:type" content="video.other" />
-<meta property="og:image" content="poster-hero.jpg" />
-<meta property="og:video" content="cockpit-promo.mp4" />
+<meta property="og:image" content="https://files.catbox.moe/iljuil.jpg" />
+<meta property="og:video" content="https://files.catbox.moe/nn27er.mp4" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="poster-hero.jpg" />
+<meta name="twitter:image" content="https://files.catbox.moe/iljuil.jpg" />
 <link rel="icon" href="favicon.svg" />
 <style>
   :root { color-scheme: dark; --bg:#101010; --card:#1c1c21; --line:#2c2c30; --fg:#f5f5f5; --muted:#9a9aa2; --amber:#ffc799; --mint:#99ffe4; }
@@ -67,12 +67,16 @@
   <p class="lead">cockpit rassemble Claude Code, Codex et les autres agents Herdr avec leur ticket, leur PR, leur CI et leur déploiement — et te dit lequel t'attend.</p>
 
   <div class="player">
-    <video id="v" src="cockpit-promo.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
+    <video id="v" poster="poster.jpg" controls playsinline preload="metadata">
+      <source src="https://github.com/jcmilouze/cockpit-promo/releases/download/v1/cockpit-promo.mp4" type="video/mp4" />
+      <source src="https://files.catbox.moe/nn27er.mp4" type="video/mp4" />
+    </video>
   </div>
   <p class="hint">Avec son : fond instrumental généré localement (ACE-Step). 1920×1080 · 30 fps · 20 Mo.</p>
 
   <div class="row">
-    <a class="btn p" href="cockpit-promo.mp4" download>⬇ Télécharger le MP4</a>
+    <a class="btn p" href="https://files.catbox.moe/nn27er.mp4" download>⬇ Télécharger le MP4</a>
+    <a class="btn" href="https://github.com/jcmilouze/cockpit-promo/releases/download/v1/cockpit-promo.mp4">Vidéo sur GitHub (miroir)</a>
     <a class="btn" href="https://github.com/quaresc/cockpit">Le dépôt GitHub</a>
     <a class="btn" href="https://quaresc.github.io/cockpit/">Le site du projet</a>
     <a class="btn" href="https://herdr.dev">herdr</a>
@@ -110,6 +114,7 @@ cockpit setup</pre>
     Film réalisé avec <a href="https://hyperframes.heygen.com">HyperFrames</a> (HTML → MP4), musique générée par
     <a href="https://github.com/acdefunny/ace-step">ACE-Step</a> sur une RTX 3090 locale. Captures d'écran officielles du projet
     <a href="https://quaresc.github.io/cockpit/">cockpit</a> (quaresc/cockpit, MIT).
+  <p class="hint" style="margin-top:14px">Deux hébergements identiques : la release GitHub (source de la lecture) et <code>files.catbox.moe</code>, en repli si l'un tombe.</p>
   </footer>
 </div>
 </body>
