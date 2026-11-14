@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cockpit — le film · 51 s pour comprendre</title>
+<meta name="description" content="cockpit : vois chaque agent de code et sur quoi il travaille — ticket, PR, CI, déploiement. Film de présentation de 51 secondes." />
+<meta property="og:title" content="cockpit — le film" />
+<meta property="og:description" content="51 secondes pour comprendre : chaque agent de code, à côté de son ticket, sa PR, son CI." />
+<meta property="og:type" content="video.other" />
+<meta property="og:image" content="poster-hero.jpg" />
+<meta property="og:video" content="cockpit-promo.mp4" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="poster-hero.jpg" />
+<link rel="icon" href="favicon.svg" />
+<style>
+  :root { color-scheme: dark; --bg:#101010; --card:#1c1c21; --line:#2c2c30; --fg:#f5f5f5; --muted:#9a9aa2; --amber:#ffc799; --mint:#99ffe4; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; padding: 0 20px 90px; }
+  .wrap { max-width: 1060px; margin: 0 auto; }
+  header { display:flex; align-items:center; gap:14px; padding: 26px 0 30px; }
+  header img { width:42px; height:42px; }
+  header b { font-size:22px; letter-spacing:.01em; }
+  header span { margin-left:auto; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+  .kicker { color:var(--amber); font-size:13px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; margin:0 0 12px; }
+  h1 { font-size: clamp(30px, 6vw, 56px); font-weight:900; line-height:1.04; letter-spacing:-.02em; margin:0 0 14px; }
+  .lead { color:var(--muted); font-size: clamp(16px, 2.4vw, 20px); line-height:1.5; margin:0 0 26px; max-width:640px; }
+  .player { position:relative; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#000;
+    box-shadow: 0 30px 90px rgba(0,0,0,.6); }
+  video { display:block; width:100%; height:auto; background:#000; }
+  .row { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 0; }
+  a.btn { display:inline-flex; align-items:center; gap:9px; padding:12px 20px; border-radius:999px;
+    border:1px solid var(--line); background:var(--card); color:var(--fg); text-decoration:none; font-size:15px; font-weight:600; }
+  a.btn.p { background:var(--amber); border-color:var(--amber); color:#101010; }
+  a.btn:hover { border-color:var(--amber); }
+  a.btn.p:hover { filter:brightness(1.06); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:44px 0 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+  .card b { display:block; font-size:17px; margin:0 0 7px; }
+  .card p { margin:0; color:var(--muted); font-size:14.5px; line-height:1.5; }
+  .card .n { color:var(--amber); font-weight:900; font-size:26px; letter-spacing:-.01em; }
+  h2 { font-size:clamp(21px,3.4vw,28px); font-weight:900; letter-spacing:-.01em; margin:52px 0 16px; }
+  ol.beats { list-style:none; counter-reset:b; padding:0; margin:0; }
+  ol.beats li { counter-increment:b; display:flex; gap:16px; padding:13px 0; border-bottom:1px solid #1c1c21; font-size:15.5px; }
+  ol.beats li::before { content:counter(b,decimal-leading-zero); color:var(--amber); font-variant-numeric:tabular-nums;
+    font-weight:900; font-size:13px; padding-top:3px; min-width:26px; }
+  ol.beats li span { color:var(--muted); }
+  pre { background:#0c0c0e; border:1px solid var(--line); border-radius:14px; padding:18px 20px; overflow:auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:14px; line-height:1.75; color:var(--mint); }
+  pre i { color:#5a5a62; font-style:normal; }
+  footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; line-height:1.7; }
+  footer a { color:var(--amber); }
+  .hint { margin-top:12px; color:var(--muted); font-size:13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="favicon.svg" alt="" /><b>cockpit</b>
+    <span>Open source · MIT</span>
+  </header>
+
+  <p class="kicker">Le film · 51 secondes</p>
+  <h1>Chaque agent de code, à côté de son travail.</h1>
+  <p class="lead">cockpit rassemble Claude Code, Codex et les autres agents Herdr avec leur ticket, leur PR, leur CI et leur déploiement — et te dit lequel t'attend.</p>
+
+  <div class="player">
+    <video id="v" src="cockpit-promo.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
+  </div>
+  <p class="hint">Avec son : fond instrumental généré localement (ACE-Step). 1920×1080 · 30 fps · 20 Mo.</p>
+
+  <div class="row">
+    <a class="btn p" href="cockpit-promo.mp4" download>⬇ Télécharger le MP4</a>
+    <a class="btn" href="https://github.com/quaresc/cockpit">Le dépôt GitHub</a>
+    <a class="btn" href="https://quaresc.github.io/cockpit/">Le site du projet</a>
+    <a class="btn" href="https://herdr.dev">herdr</a>
+  </div>
+
+  <div class="grid">
+    <div class="card"><b class="n">127.0.0.1</b><p>Le hub tourne sur ta machine, n'écoute qu'en local, avec un jeton. Aucun serveur cockpit.</p></div>
+    <div class="card"><b class="n">0 jeton</b><p>GitHub passe par ta connexion <code>gh</code>, le reste vient des serveurs MCP déjà utilisés par tes agents.</p></div>
+    <div class="card"><b class="n">0 €</b><p>Libre et open source, MIT. macOS et Linux. Le travail demandé à un agent reste facturé à cet agent.</p></div>
+  </div>
+
+  <h2>Le film, scène par scène</h2>
+  <ol class="beats">
+    <li>Six agents, six onglets — et aucune idée de celui qui t'attend <span>· 0:00</span></li>
+    <li>cockpit : l'agent avec son ticket, sa PR, son CI, son déploiement <span>· 0:06</span></li>
+    <li>De l'install au poste de pilotage, en trois temps <span>· 0:12</span></li>
+    <li>Home : qui t'attend, en une seconde <span>· 0:19</span></li>
+    <li>Chaque agent avec son travail, ses questions répondues sur place <span>· 0:25</span></li>
+    <li>L'éditeur, le diff et tes remarques à portée de touche <span>· 0:31</span></li>
+    <li>Inbox, runbooks, réunions, to-do : une palette, ⌘K <span>· 0:37</span></li>
+    <li>Rien ne sort de ta machine <span>· 0:41</span></li>
+    <li>Trouve l'agent qui a besoin de toi <span>· 0:46</span></li>
+  </ol>
+
+  <h2>Installer</h2>
+  <pre><i># dans Claude Code</i>
+/plugin install cockpit --marketplace quaresc/cockpit
+/cockpit:setup
+
+<i># dans un shell, pour n'importe quel autre agent</i>
+curl -fsSL https://raw.githubusercontent.com/quaresc/cockpit/main/install.sh | sh
+cockpit setup</pre>
+
+  <footer>
+    Film réalisé avec <a href="https://hyperframes.heygen.com">HyperFrames</a> (HTML → MP4), musique générée par
+    <a href="https://github.com/acdefunny/ace-step">ACE-Step</a> sur une RTX 3090 locale. Captures d'écran officielles du projet
+    <a href="https://quaresc.github.io/cockpit/">cockpit</a> (quaresc/cockpit, MIT).
+  </footer>
+</div>
+</body>
+</html>
